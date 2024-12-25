@@ -95,7 +95,48 @@ const getAll = async (req, res) => {
       },
     ]);
 
-    res.send(review[0]);
+    if (review.length !== 0) {
+      res.send(review[0]);
+    } else {
+      res.send({
+        totalReviews: 0,
+        averageRating: 0,
+        ratings: [
+          {
+            rating: 1,
+            count: {
+              count: 0,
+            },
+          },
+          {
+            rating: 2,
+            count: {
+              count: 0,
+            },
+          },
+          {
+            rating: 3,
+            count: {
+              rating: 3,
+              count: 0,
+            },
+          },
+          {
+            rating: 4,
+            count: {
+              count: 0,
+            },
+          },
+          {
+            rating: 5,
+            count: {
+              rating: 5,
+              count: 0,
+            },
+          },
+        ],
+      });
+    }
   } catch (err) {
     errorMessage(res, err);
   }
