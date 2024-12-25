@@ -5,7 +5,7 @@ const productsSchema = new mongoose.Schema(
     name: {
       type: String,
     },
-    desc: {
+    description: {
       type: String,
       maxLength: 500,
     },
@@ -18,7 +18,7 @@ const productsSchema = new mongoose.Schema(
     price: {
       type: Number,
     },
-    salePrice: {
+    originalPrice: {
       type: Number,
     },
     slug: {
@@ -26,6 +26,10 @@ const productsSchema = new mongoose.Schema(
       maxLength: 255,
     },
     rating: {
+      type: Number,
+      default: 0,
+    },
+    totalReviews: {
       type: Number,
       default: 0,
     },

@@ -127,6 +127,7 @@ import { checkPermission } from "../middlewares/middlewares.js";
 const routerProduct = Router();
 routerProduct.get("/", productsController.getAll);
 routerProduct.get("/:slug", productsController.getDetail);
+routerProduct.get("/same/:slug", productsController.getProductSame);
 routerProduct.post("/", checkPermission, productsController.create);
 routerProduct.put("/:slug", checkPermission, productsController.update);
 routerProduct.delete("/:id", checkPermission, productsController.delete);
